@@ -30,7 +30,7 @@ background-color: yellowgreen;
 }
 
 .card.hidden img {
-    visibility: visible; 
+    display: none; 
 }
 
 .card.flipped {
