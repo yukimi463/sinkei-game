@@ -51,6 +51,28 @@
         </div>
     </div>
     <script>
+        function shuffleCards() {
+            const board = document.getElementById("game-board");
+            const cards = Array.from(board.children);
+            cards.sort(() => Math.random() - 0.5);
+            board.innerHTML = "";
+            cards.forEach(card => board.appendChild(card));
+        }
+
+        function enableDoubleFlip() {
+            doubleFlipEnabled = true;
+            alert("ダブルフリップが有効になりました！このターンだけ4枚めくれます。");
+        }
+
+        function cutOpponentTime() {
+            if (!isPlayerTurn) {
+                alert("タイムカットは相手ターンでのみ有効です！");
+                return;
+            }
+            timeRemaining = Math.max(0, timeRemaining - 30); // 次の相手ターンの制限時間を30秒短縮
+            alert("相手の次のターンの制限時間が30秒短縮されました！");
+        }
+
         let cards = [];
         let shuffledCards = [];
         let flippedCards = [];
@@ -215,28 +237,6 @@
 
             // スキル表示を更新
             updateSkillDisplay();
-        }
-
-        function shuffleCards() {
-            const board = document.getElementById("game-board");
-            const cards = Array.from(board.children);
-            cards.sort(() => Math.random() - 0.5);
-            board.innerHTML = "";
-            cards.forEach(card => board.appendChild(card));
-        }
-
-        function enableDoubleFlip() {
-            doubleFlipEnabled = true;
-            alert("ダブルフリップが有効になりました！このターンだけ4枚めくれます。");
-        }
-
-        function cutOpponentTime() {
-            if (!isPlayerTurn) {
-                alert("タイムカットは相手ターンでのみ有効です！");
-                return;
-            }
-            timeRemaining = Math.max(0, timeRemaining - 30); // 次の相手ターンの制限時間を30秒短縮
-            alert("相手の次のターンの制限時間が30秒短縮されました！");
         }
 
         function addToPlayerHand(card) {
