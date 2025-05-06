@@ -78,7 +78,10 @@
         let flippedCards = [];
         let matchedCards = 0;
         let isPlayerTurn = true; // プレイヤーのターンかどうか
-        let doubleFlipEnabled = false; // ← ここを最初のほうに移動
+        let doubleFlipEnabled = false;
+        
+        let turnCount = 1; 
+        let timeRemaining = 60; 
         let timerInterval; 
         
         const playerSkills = [         // ← これも早めに移動
@@ -318,10 +321,6 @@
             const currentPairs = opponentHandContainer.querySelectorAll('.pair-container').length;
             opponentPairsCount.textContent = `ペア数: ${currentPairs}`;
         }
-
-
-        let turnCount = 1; // ターン数
-        let timeRemaining = 60; // 制限時間（秒）
 
         const turnCounter = document.getElementById('turn-counter');
         const timeRemainingDisplay = document.getElementById('time-remaining');
