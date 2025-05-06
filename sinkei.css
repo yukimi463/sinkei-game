@@ -16,8 +16,7 @@ background-color: yellowgreen;
 .card img {
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);    /* ←カードの回転と合わせる */
+    backface-visibility: hidden;   /* ←カードの回転と合わせる */
     display: block;
     background-color: transparent;
 }
