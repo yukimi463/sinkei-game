@@ -37,7 +37,8 @@ background-color: yellowgreen;
     background-color: transparent; /* 表面は背景を透明にして画像を見せる */
 }
 
-.card.flipped img {
+.card.flipped img,
+.card.matched img {
     display: block; 
 }
 
