@@ -96,12 +96,13 @@
         updateSkillDisplay();
         startTimer(); // タイマーを開始
 
-          fetch("animal_cards.json")
-        .then(res => res.json())
-        .then(data => {
-            shuffledCards = data;
-            initializeGame(shuffledCards);
-        });
+        fetch("animal_cards.json")
+            .then(res => res.json())
+            .then(data => {
+                const duplicated = [...data, ...data]; // ← 20種を2倍に（20×2 = 40枚）
+                shuffledCards = duplicated.sort(() => Math.random() - 0.5); // シャッフル
+                initializeGame(shuffledCards);
+            });
         
         function initializeGame(shuffledCards) {
             const board = document.getElementById('game-board');
