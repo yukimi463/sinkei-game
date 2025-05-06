@@ -86,14 +86,15 @@
           { name: "ダブルフリップ", action: enableDoubleFlip, remainingUses: 1 },
           { name: "タイムカット", action: cutOpponentTime, remainingUses: 1 }
         ];
-
+    document.addEventListener("DOMContentLoaded", () => {
         updateSkillDisplay();
         startTimer(); // タイマーを開始
 
-        fetch("animal_cards.json")
-            .then(res => res.json())
-            .then(shuffledCards => {
-                initializeGame(shuffledCards);
+          fetch("animal_cards.json")
+        .then(res => res.json())
+        .then(data => {
+            shuffledCards = data;
+            initializeGame(shuffledCards);
         });
         
         function initializeGame(shuffledCards) {
