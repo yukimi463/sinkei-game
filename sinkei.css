@@ -39,7 +39,7 @@ background-color: yellowgreen;
 }
 
 .card.flipped img {
-    display: block; /* 表面では画像を表示 */
+    display: block; 
 }
 
 /* グラデーションアニメーション */
