@@ -29,7 +29,7 @@ background-color: yellowgreen;
 }
 
 .card.hidden img {
-    display: block; 
+    display: none; 
 }
 
 .card.flipped {
