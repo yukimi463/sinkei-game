@@ -83,6 +83,9 @@
         let turnCount = 1; 
         let timeRemaining = 60; 
         let timerInterval; 
+
+        const turnCounter = document.getElementById('turn-counter');
+        const timeRemainingDisplay = document.getElementById('time-remaining');
         
         const playerSkills = [         // ← これも早めに移動
           { name: "シャッフル", action: shuffleCards, remainingUses: 2 },
@@ -321,9 +324,6 @@
             const currentPairs = opponentHandContainer.querySelectorAll('.pair-container').length;
             opponentPairsCount.textContent = `ペア数: ${currentPairs}`;
         }
-
-        const turnCounter = document.getElementById('turn-counter');
-        const timeRemainingDisplay = document.getElementById('time-remaining');
 
         // ターン数を更新する関数
         function updateTurnCount() {
