@@ -56,8 +56,8 @@
         let flippedCards = [];
         let matchedCards = 0;
         let isPlayerTurn = true; // プレイヤーのターンかどうか
-
         let doubleFlipEnabled = false; // ← ここを最初のほうに移動
+        
         const playerSkills = [         // ← これも早めに移動
           { name: "シャッフル", action: shuffleCards, remainingUses: 2 },
           { name: "ダブルフリップ", action: enableDoubleFlip, remainingUses: 1 },
