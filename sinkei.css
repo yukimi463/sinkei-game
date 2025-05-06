@@ -16,7 +16,7 @@ background-color: yellowgreen;
 .card img {
     width: 100%;
     height: 100%;
-    backface-visibility: visible;
+    backface-visibility: hidden;
     transform: rotateY(180deg);    /* ←カードの回転と合わせる */
     display: block;
     background-color: transparent;
@@ -30,7 +30,7 @@ background-color: yellowgreen;
 }
 
 .card.hidden img {
-display: none; /* 裏面では画像を非表示に */
+    visibility: visible; 
 }
 
 .card.flipped {
@@ -38,7 +38,7 @@ display: none; /* 裏面では画像を非表示に */
     background-color: transparent; /* 表面は背景を透明にして画像を見せる */
 }
 
-.card.flipped img {
+.card.flipped img,
     display: block; /* 表面では画像を表示 */
 }
 
