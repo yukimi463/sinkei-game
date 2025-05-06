@@ -99,8 +99,9 @@
         fetch("animal_cards.json")
             .then(res => res.json())
             .then(data => {
-                const duplicated = [...data, ...data]; // ← 20種を2倍に（20×2 = 40枚）
-                shuffledCards = duplicated.sort(() => Math.random() - 0.5); // シャッフル
+                const selected = data.slice(0, 20); // 最初の20種だけを使用
+                const duplicated = [...selected, ...selected];
+                shuffledCards = duplicated.sort(() => Math.random() - 0.5);
                 initializeGame(shuffledCards);
             });
         
