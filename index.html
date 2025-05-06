@@ -57,17 +57,22 @@
         let matchedCards = 0;
         let isPlayerTurn = true; // プレイヤーのターンかどうか
 
-        // APIからanimal_cardsフォルダ内のファイル一覧を取得
-        fetch("animal_cards.json")
-            .then(res => res.json())
-            .then(shuffledCards => {
-                initializeGame(shuffledCards);
-            });
-                updateSkillDisplay();
-                startTimer(); // タイマーを開始
-        
-          
+        let doubleFlipEnabled = false; // ← ここを最初のほうに移動
+        const playerSkills = [         // ← これも早めに移動
+          { name: "シャッフル", action: shuffleCards, remainingUses: 2 },
+          { name: "ダブルフリップ", action: enableDoubleFlip, remainingUses: 1 },
+          { name: "タイムカット", action: cutOpponentTime, remainingUses: 1 }
+        ];
 
+            updateSkillDisplay();
+            startTimer(); // タイマーを開始
+
+            fetch("animal_cards.json")
+                .then(res => res.json())
+                .then(shuffledCards => {
+                    initializeGame(shuffledCards);
+            });
+        
         function initializeGame(shuffledCards) {
             const board = document.getElementById('game-board');
             shuffledCards.forEach(card => {
@@ -189,12 +194,6 @@
                 }
             }
         }
-
-        const playerSkills = [
-            { name: "シャッフル", action: shuffleCards, remainingUses: 2 },
-            { name: "ダブルフリップ", action: enableDoubleFlip, remainingUses: 1 },
-            { name: "タイムカット", action: cutOpponentTime, remainingUses: 1 }
-        ];
 
         function useSkill(skillIndex) {
             const skill = playerSkills[skillIndex];
