@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Dog",
+    "img": "Dog.png"
+  },
+  {
+    "name": "Cat",
+    "img": "Cat.png"
+  },
+  {
+    "name": "Flying_squirrel",
+    "img": "Flying_squirrel.png"
+  },
+  {
+    "name": "Bear",
+    "img": "Bear.png"
+  },
+  {
+    "name": "Bat",
+    "img": "Bat.png"
+  },
+  {
+    "name": "Dolphin",
+    "img": "Dolphin.png"
+  },
+  {
+    "name": "Flamingo",
+    "img": "Flamingo.png"
+  },
+  {
+    "name": "Giraffe",
+    "img": "Giraffe.png"
+  },
+  {
+    "name": "Japanese_giant_flying_squirrel",
+    "img": "Japanese_giant_flying_squirrel.png"
+  },
+  {
+    "name": "Lizard",
+    "img": "Lizard.png"
+  },
+  {
+    "name": "Rabbit",
+    "img": "Rabbit.png"
+  },
+  {
+    "name": "Fox",
+    "img": "Fox.png"
+  },
+  {
+    "name": "Horse",
+    "img": "Horse.png"
+  },
+  {
+    "name": "Penguin",
+    "img": "Penguin.png"
+  },
+  {
+    "name": "Elephant",
+    "img": "Elephant.png"
+  },
+  {
+    "name": "Tiger",
+    "img": "Tiger.png"
+  },
+  {
+    "name": "Lion",
+    "img": "Lion.png"
+  },
+  {
+    "name": "Kangaroo",
+    "img": "Kangaroo.png"
+  },
+  {
+    "name": "Panda",
+    "img": "Panda.png"
+  },
+  {
+    "name": "Wolf",
+    "img": "Wolf.png"
+  }
+]
