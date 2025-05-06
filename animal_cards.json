@@ -44,36 +44,36 @@
     "img": "Rabbit.png"
   },
   {
-    "name": "Fox",
-    "img": "Fox.png"
+    "name": "Monkey",
+    "img": "Monkey.png"
   },
   {
-    "name": "Horse",
-    "img": "Horse.png"
+    "name": "Weasel",
+    "img": "Weasel.png"
   },
   {
-    "name": "Penguin",
-    "img": "Penguin.png"
+    "name": "Mole",
+    "img": "Mole.png"
   },
   {
-    "name": "Elephant",
-    "img": "Elephant.png"
+    "name": "Wild_boar",
+    "img": "Wild_boar.png"
   },
   {
-    "name": "Tiger",
-    "img": "Tiger.png"
+    "name": "Steller_sea_lion",
+    "img": "Steller_sea_lion.png"
   },
   {
-    "name": "Lion",
-    "img": "Lion.png"
+    "name": "Raccoon_dog",
+    "img": "Raccoon_dog.png"
   },
   {
-    "name": "Kangaroo",
-    "img": "Kangaroo.png"
+    "name": "Mouse",
+    "img": "Mouse.png"
   },
   {
-    "name": "Panda",
-    "img": "Panda.png"
+    "name": "Whale",
+    "img": "Whale.png"
   },
   {
     "name": "Wolf",
