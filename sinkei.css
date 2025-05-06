@@ -38,7 +38,7 @@ background-color: yellowgreen;
 }
 
 .card.flipped img {
-    display: block; 
+    display: block !important; 
 }
 
 /* グラデーションアニメーション */
