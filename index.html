@@ -79,6 +79,7 @@
         let matchedCards = 0;
         let isPlayerTurn = true; // プレイヤーのターンかどうか
         let doubleFlipEnabled = false; // ← ここを最初のほうに移動
+        let timerInterval; 
         
         const playerSkills = [         // ← これも早めに移動
           { name: "シャッフル", action: shuffleCards, remainingUses: 2 },
@@ -329,9 +330,6 @@
             turnCount++;
             turnCounter.textContent = `ターン数: ${turnCount}`;
         }
-
-        // 制限時間をカウントダウンする関数
-        let timerInterval; // タイマーのインターバルIDを管理
 
         function startTimer() {
             clearInterval(timerInterval); // 既存のタイマーをクリア
