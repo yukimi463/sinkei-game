@@ -64,14 +64,14 @@
           { name: "タイムカット", action: cutOpponentTime, remainingUses: 1 }
         ];
 
-            updateSkillDisplay();
-            startTimer(); // タイマーを開始
+        updateSkillDisplay();
+        startTimer(); // タイマーを開始
 
-            fetch("animal_cards.json")
-                .then(res => res.json())
-                .then(shuffledCards => {
-                    initializeGame(shuffledCards);
-            });
+        fetch("animal_cards.json")
+            .then(res => res.json())
+            .then(shuffledCards => {
+                initializeGame(shuffledCards);
+        });
         
         function initializeGame(shuffledCards) {
             const board = document.getElementById('game-board');
