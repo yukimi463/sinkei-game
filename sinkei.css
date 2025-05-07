@@ -5,7 +5,7 @@ background-color: yellowgreen;
     width: 80px;
     height: 80px;
     border: none;
-    display: inline-block;
+    display: block;
     text-align: center;
     background-color: transparent;
     cursor: pointer;
@@ -59,7 +59,7 @@ background-color: yellowgreen;
 }
 
 #game-board {
-    display: flex;
+    display: grid;
     flex-wrap: wrap; /* カードを折り返して表示 */
     gap: 10px; /* カード間の余白を調整 */
     justify-content: center; /* カードを中央揃え */
