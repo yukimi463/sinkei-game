@@ -157,7 +157,7 @@
 
                 // ペアが1組の場合
                 if (matchedPairs.length === 2) {
-                    matchedPairs.forEach(card => card.classList.add('matched', 'cleared')); // ペアをマッチ状態にする
+                    matchedPairs.forEach(card => card.classList.add('matched')); // ペアをマッチ状態にする
                     matchedCards += 2;
 
                     // ペアを手元に移動
@@ -195,8 +195,8 @@
                 // 通常の2枚めくりの場合
                 const [card1, card2] = flippedCards;
                 if (card1.dataset.name === card2.dataset.name) {
-                    card1.classList.add('matched', 'cleared');
-                    card2.classList.add('matched', 'cleared');
+                    card1.classList.add('matched');
+                    card2.classList.add('matched');
                     
                     matchedCards += 2;
 
@@ -275,6 +275,14 @@
                 pairContainer.appendChild(nameLabel);
                 playerHandContainer.appendChild(pairContainer);
             }
+
+             // クローンを追加（画像は表示される）
+            clone.classList.add('matched');
+            clone.querySelector('img').style.display = 'block';
+            pairContainer.appendChild(clone);
+        
+            // 場のカードは透明に
+            card.classList.add('cleared');
 
             // カードを横に並べる
             card.classList.remove('hidden');
