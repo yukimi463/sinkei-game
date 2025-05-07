@@ -40,6 +40,10 @@ background-color: yellowgreen;
     display: block !important; 
 }
 
+.card.cleared {
+    visibility: hidden;   /* 見た目を消すが、レイアウト上は残る */
+}
+
 /* グラデーションアニメーション */
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
