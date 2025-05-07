@@ -254,6 +254,10 @@
         function addToPlayerHand(card) {
             const playerHandContainer = document.getElementById('player-hand');
 
+              // クローンを作成
+            const clone = card.cloneNode(true);
+            clone.classList.remove('cleared'); // 手元では透明にしない
+
             // 同じカード名のペアコンテナがあるか確認
             let pairContainer = playerHandContainer.querySelector(`.pair-container[data-name="${card.dataset.name}"]`);
             if (!pairContainer) {
@@ -301,6 +305,10 @@
         function addToOpponentHand(card) {
             const opponentHandContainer = document.getElementById('opponent-hand');
 
+              // クローンを作成
+            const clone = card.cloneNode(true);
+            clone.classList.remove('cleared'); // 手元では透明にしない
+
             // 同じカード名のペアコンテナがあるか確認
             let pairContainer = opponentHandContainer.querySelector(`.pair-container[data-name="${card.dataset.name}"]`);
             if (!pairContainer) {
@@ -322,6 +330,14 @@
                 pairContainer.appendChild(nameLabel);
                 opponentHandContainer.appendChild(pairContainer);
             }
+
+             // クローンを追加（画像は表示される）
+            clone.classList.add('matched');
+            clone.querySelector('img').style.display = 'block';
+            pairContainer.appendChild(clone);
+        
+            // 場のカードは透明に
+            card.classList.add('cleared');
 
             // カード表示処理
             card.classList.remove('hidden');
