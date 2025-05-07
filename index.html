@@ -157,7 +157,7 @@
 
                 // ペアが1組の場合
                 if (matchedPairs.length === 2) {
-                    matchedPairs.forEach(card => card.classList.add('matched')); // ペアをマッチ状態にする
+                    matchedPairs.forEach(card => card.classList.add('matched', 'cleared')); // ペアをマッチ状態にする
                     matchedCards += 2;
 
                     // ペアを手元に移動
@@ -195,8 +195,9 @@
                 // 通常の2枚めくりの場合
                 const [card1, card2] = flippedCards;
                 if (card1.dataset.name === card2.dataset.name) {
-                    card1.classList.add('matched');
-                    card2.classList.add('matched');
+                    card1.classList.add('matched', 'cleared');
+                    card2.classList.add('matched', 'cleared');
+                    
                     matchedCards += 2;
 
                     // ペアを手元に移動
@@ -209,6 +210,7 @@
                             addToOpponentHand(card2);
                         }
                         flippedCards = [];
+                        
                         if (matchedCards === shuffledCards.length) {
                             determineWinner();
                         }
