@@ -60,6 +60,7 @@ background-color: yellowgreen;
 
 #game-board {
     display: grid;
+    grid-template-columns: repeat(5, 1fr);
     flex-wrap: wrap; /* カードを折り返して表示 */
     gap: 10px; /* カード間の余白を調整 */
     justify-content: center; /* カードを中央揃え */
@@ -81,6 +82,7 @@ background-color: yellowgreen;
         height: 90px;
     }
     #game-board {
+        grid-template-columns: repeat(8, 1fr);
         gap: 5px; /* カード間の余白を調整 */
     }
     button {
