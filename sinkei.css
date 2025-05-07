@@ -78,9 +78,8 @@ background-color: yellowgreen;
 
 @media (max-width: 600px) {
     .card {
-        width: 60px; /* カードを小さく */
-        height: 90px;
-        aspect-ratio: 1 / 1;
+        width: 40px; /* カードを小さく */
+        height: 40px;
     }
     #game-board {
         grid-template-columns: repeat(8, 1fr);
