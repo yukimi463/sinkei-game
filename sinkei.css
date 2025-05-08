@@ -2,16 +2,16 @@ body {
 background-color: yellowgreen;
 }   
 .card {
-    width: 11vw;   /* 100 ÷ 8 より少し小さめ */
-　  height: 11vw;            
- 　 aspect-ratio: 1 / 1;
-    border: none;
-    display: inline-block;
-    text-align: center;
-    background-color: transparent;
-    cursor: pointer;
-    margin: 5px; /* カード間の余白を追加 */
-    transition: transform 0.6s; /* 回転アニメーションの速度 */
+  width: 11vw;
+  height: 11vw;
+  aspect-ratio: 1 / 1;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 5px;
+  transition: transform 0.6s;
 }
 .card img {
     width: 100%;
@@ -78,10 +78,10 @@ background-color: yellowgreen;
 }
 
 @media (max-width: 600px) {
-    .card {
-    　　width: 100%;
-  　　　aspect-ratio: 1 / 1;
-    }
+  .card {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+   }
     #game-board {
         grid-template-columns: repeat(8, 1fr);
         gap: 1vw;
