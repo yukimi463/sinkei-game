@@ -77,16 +77,27 @@ background-color: yellowgreen;
     cursor: default;
 }
 
-@media (max-width: 600px) {
+ @media (max-width: 600px) {
+  #game-board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8列 */
+    gap: 1vw;
+    padding: 1vw;
+  }
+
   .card {
+    width: 10vw;
+    height: 10vw;
+    margin: 0; /* gapで調整するのでmargin不要 */
+  }
+
+  .card img {
     width: 100%;
-    aspect-ratio: 1 / 1;
-   }
-    #game-board {
-        grid-template-columns: repeat(8, 1fr);
-        gap: 1vw;
- 　　　　padding: 2vw;
-    }
+    height: 100%;
+    object-fit: cover; /* 画像の変形を防ぐ */
+  }
+}
+
     button {
         font-size: 14px; /* ボタンの文字サイズを調整 */
         padding: 8px 16px;
