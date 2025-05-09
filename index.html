@@ -290,10 +290,6 @@
             card.classList.add('matched');
             card.querySelector('img').style.display = 'block';
 
-            const cardClone = card.cloneNode(true); // 表示用のクローンを作る
-　　　　　　　cardClone.classList.remove("cleared");
-　　　　　　　cardClone.classList.add("matched");
-　　　　　　　cardClone.querySelector("img").style.display = "block";
 　　　　　　　pairContainer.appendChild(card); 
 
             // ペア数更新（÷2）
@@ -340,11 +336,7 @@
             card.classList.remove('hidden');
             card.classList.add('matched');
             card.querySelector('img').style.display = 'block';
-
-            const cardClone = card.cloneNode(true); // 表示用のクローンを作る
-　　　　　　　cardClone.classList.remove("cleared");
-　　　　　　　cardClone.classList.add("matched");
-　　　　　　　cardClone.querySelector("img").style.display = "block";
+            
 　　　　　　　pairContainer.appendChild(card); 
 
             // ペア数更新（÷2）
