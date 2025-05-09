@@ -61,10 +61,9 @@ background-color: yellowgreen;
 
 #game-board {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    flex-wrap: wrap; /* カードを折り返して表示 */
-    gap: 10px; /* カード間の余白を調整 */
-    justify-content: center; /* カードを中央揃え */
+    grid-template-columns: repeat(8, 80px);  /* ← 8列固定 */
+    gap: 10px;                                /* カード間の余白 */
+    justify-content: center;                  /* 中央揃え */
 }
 
 #player-hand, #opponent-hand {
