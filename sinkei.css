@@ -3,8 +3,10 @@ background-color: yellowgreen;
 }   
 
 .card {
-  width: 60px;
-  height: 60px;
+  width: calc(100vw / 10);  /* 横幅に収まるように10等分（余白考慮） */
+  height: calc(100vw / 10);
+  max-width: 60px;
+  max-height: 60px;
   border: none;
   display: inline-block;
   text-align: center;
@@ -61,8 +63,8 @@ background-color: yellowgreen;
 
 #game-board {
   display: grid;
-  grid-template-columns: repeat(8, 60px); /* 横8列、60pxずつ */
-  gap: 6px;                                /* 少し小さめの隙間 */
+  grid-template-columns: repeat(8, 1fr);  /* 8列 */
+  gap: 4px;
   justify-content: center;
 }
 
