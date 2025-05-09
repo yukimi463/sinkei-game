@@ -60,10 +60,10 @@ background-color: yellowgreen;
 }
 
 #game-board {
-    display: grid;
-    grid-template-columns: repeat(8, 80px);  /* ← 8列固定 */
-    gap: 10px;                                /* カード間の余白 */
-    justify-content: center;                  /* 中央揃え */
+  display: grid;
+  grid-template-columns: repeat(8, 11vw);
+  gap: 1vw;
+  justify-content: center;
 }
 
 #player-hand, #opponent-hand {
