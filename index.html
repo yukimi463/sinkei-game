@@ -290,7 +290,11 @@
             card.classList.add('matched');
             card.querySelector('img').style.display = 'block';
 
-            pairContainer.appendChild(card);
+            const cardClone = card.cloneNode(true); // 表示用のクローンを作る
+　　　　　　　cardClone.classList.remove("cleared");
+　　　　　　　cardClone.classList.add("matched");
+　　　　　　　cardClone.querySelector("img").style.display = "block";
+　　　　　　　pairContainer.appendChild(cardClone); // 手元にはクローンを表示
 
             // ペア数更新（÷2）
             const playerPairsCount = document.getElementById('player-pairs-count');
@@ -337,8 +341,11 @@
             card.classList.add('matched');
             card.querySelector('img').style.display = 'block';
 
-            // コンテナに追加（横並び）
-            pairContainer.appendChild(card);
+            const cardClone = card.cloneNode(true); // 表示用のクローンを作る
+　　　　　　　cardClone.classList.remove("cleared");
+　　　　　　　cardClone.classList.add("matched");
+　　　　　　　cardClone.querySelector("img").style.display = "block";
+　　　　　　　pairContainer.appendChild(cardClone); // 手元にはクローンを表示
 
             // ペア数更新（÷2）
             const opponentPairsCount = document.getElementById('opponent-pairs-count');
