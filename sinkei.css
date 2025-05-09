@@ -62,7 +62,7 @@ background-color: yellowgreen;
 #game-board {
   display: grid;
   grid-template-columns: repeat(8, 1fr);  /* 横に8列 */
-  gap: 0;
+  gap: 2px;
   justify-content: center;
   max-width: 500px;         /* ← 必要に応じて制限（オプション） */
   margin: 0 auto;           /* 中央揃え */
