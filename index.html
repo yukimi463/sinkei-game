@@ -251,22 +251,13 @@
             updateSkillDisplay();
         }
 
-        function addToPlayerHand(card) {
+       function addToPlayerHand(card) {
             const playerHandContainer = document.getElementById('player-hand');
-
-            // ダミーカードを作ってカードの前に追加
-　　　　　　　const dummy = document.createElement('div');
-　　　　　　　dummy.classList.add('card', 'dummy');
-　　　　　　　card.parentNode.insertBefore(dummy, card);
-
-　　　　　　　　// 場のカードは透明に
-　　　　　　　　card.classList.add('cleared');
-
-
-            // 同じカード名のペアコンテナがあるか確認
+            const board = document.getElementById('game-board');
+        
+            // 手元用のコンテナを探す／なければ作る
             let pairContainer = playerHandContainer.querySelector(`.pair-container[data-name="${card.dataset.name}"]`);
             if (!pairContainer) {
-                // なければ新規作成
                 pairContainer = document.createElement('div');
                 pairContainer.classList.add('pair-container');
                 pairContainer.setAttribute('data-name', card.dataset.name);
@@ -274,46 +265,46 @@
                 pairContainer.style.flexDirection = 'column';
                 pairContainer.style.alignItems = 'center';
                 pairContainer.style.marginRight = '10px';
-
+        
                 const nameLabel = document.createElement('div');
                 nameLabel.textContent = card.dataset.name;
                 nameLabel.style.fontSize = '12px';
                 nameLabel.style.fontWeight = 'bold';
                 nameLabel.style.marginBottom = '4px';
-
+        
                 pairContainer.appendChild(nameLabel);
                 playerHandContainer.appendChild(pairContainer);
             }
-
-            // カードを横に並べる
-            card.classList.remove('hidden');
+        
+            // 1. card を board から削除
+            const cardIndex = Array.from(board.children).indexOf(card);
+            board.removeChild(card);
+        
+            // 2. board に透明のダミーをその位置に入れる
+            const dummy = document.createElement('div');
+            dummy.classList.add('card', 'cleared');
+            board.insertBefore(dummy, board.children[cardIndex]);
+        
+            // 3. カードを手元に追加して表示
+            card.classList.remove('hidden', 'flipped');
             card.classList.add('matched');
             card.querySelector('img').style.display = 'block';
-
-　　　　　　　pairContainer.appendChild(card); 
-
-            // ペア数更新（÷2）
+            pairContainer.appendChild(card);
+        
+            // ペア数更新
             const playerPairsCount = document.getElementById('player-pairs-count');
             const currentPairs = playerHandContainer.querySelectorAll('.pair-container').length;
             playerPairsCount.textContent = `ペア数: ${currentPairs}`;
         }
 
 
-        function addToOpponentHand(card) {
+       function addToOpponentHand(card) {
             const opponentHandContainer = document.getElementById('opponent-hand');
-            
-　　　　　　　// ダミーカードを作ってカードの前に追加
-　　　　　　　const dummy = document.createElement('div');
-　　　　　　　dummy.classList.add('card', 'dummy');
-　　　　　　　card.parentNode.insertBefore(dummy, card);
-
-　　　　　　　// 場のカードは透明に
-　　　　　　　card.classList.add('cleared');
-　
-            // 同じカード名のペアコンテナがあるか確認
+            const board = document.getElementById('game-board');
+        
+            // 手元用のペア用コンテナを探す／なければ作成
             let pairContainer = opponentHandContainer.querySelector(`.pair-container[data-name="${card.dataset.name}"]`);
             if (!pairContainer) {
-                // なければ新しく作成
                 pairContainer = document.createElement('div');
                 pairContainer.classList.add('pair-container');
                 pairContainer.setAttribute('data-name', card.dataset.name);
@@ -321,29 +312,36 @@
                 pairContainer.style.flexDirection = 'column';
                 pairContainer.style.alignItems = 'center';
                 pairContainer.style.marginRight = '10px';
-
+        
                 const nameLabel = document.createElement('div');
                 nameLabel.textContent = card.dataset.name;
                 nameLabel.style.fontSize = '12px';
                 nameLabel.style.fontWeight = 'bold';
                 nameLabel.style.marginBottom = '4px';
-
+        
                 pairContainer.appendChild(nameLabel);
                 opponentHandContainer.appendChild(pairContainer);
             }
-
-            // カード表示処理
-            card.classList.remove('hidden');
+        
+            // 1. カードを board から削除
+            const cardIndex = Array.from(board.children).indexOf(card);
+            board.removeChild(card);
+        
+            // 2. 透明のダミーを挿入
+            const dummy = document.createElement('div');
+            dummy.classList.add('card', 'cleared');
+            board.insertBefore(dummy, board.children[cardIndex]);
+        
+            // 3. カードを手元に追加して表示
+            card.classList.remove('hidden', 'flipped');
             card.classList.add('matched');
             card.querySelector('img').style.display = 'block';
-            
-　　　　　　　pairContainer.appendChild(card); 
 
-            // ペア数更新（÷2）
+           // ペア数更新
             const opponentPairsCount = document.getElementById('opponent-pairs-count');
             const currentPairs = opponentHandContainer.querySelectorAll('.pair-container').length;
             opponentPairsCount.textContent = `ペア数: ${currentPairs}`;
-        }
+       }
 
         // ターン数を更新する関数
         function updateTurnCount() {
