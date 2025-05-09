@@ -53,7 +53,7 @@ background-color: yellowgreen;
 }
 
 .matched {
-    background-color: #aaffaa;
+    background-color: transparent;
 }
 .matched img {
     display: block;
