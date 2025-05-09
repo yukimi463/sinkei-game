@@ -254,9 +254,14 @@
         function addToPlayerHand(card) {
             const playerHandContainer = document.getElementById('player-hand');
 
-              // クローンを作成
-            const clone = card.cloneNode(true);
-            clone.classList.remove('cleared'); // 手元では透明にしない
+            // ダミーカードを作ってカードの前に追加
+　　　　　　　const dummy = document.createElement('div');
+　　　　　　　dummy.classList.add('card', 'dummy');
+　　　　　　　card.parentNode.insertBefore(dummy, card);
+
+　　　　　　　　// 場のカードは透明に
+　　　　　　　　card.classList.add('cleared');
+
 
             // 同じカード名のペアコンテナがあるか確認
             let pairContainer = playerHandContainer.querySelector(`.pair-container[data-name="${card.dataset.name}"]`);
@@ -280,14 +285,6 @@
                 playerHandContainer.appendChild(pairContainer);
             }
 
-             // クローンを追加（画像は表示される）
-            clone.classList.add('matched');
-            clone.querySelector('img').style.display = 'block';
-            pairContainer.appendChild(clone);
-        
-            // 場のカードは透明に
-            card.classList.add('cleared');
-
             // カードを横に並べる
             card.classList.remove('hidden');
             card.classList.add('matched');
@@ -304,11 +301,15 @@
 
         function addToOpponentHand(card) {
             const opponentHandContainer = document.getElementById('opponent-hand');
+            
+　　　　　　　// ダミーカードを作ってカードの前に追加
+　　　　　　　const dummy = document.createElement('div');
+　　　　　　　dummy.classList.add('card', 'dummy');
+　　　　　　　card.parentNode.insertBefore(dummy, card);
 
-              // クローンを作成
-            const clone = card.cloneNode(true);
-            clone.classList.remove('cleared'); // 手元では透明にしない
-
+　　　　　　　// 場のカードは透明に
+　　　　　　　card.classList.add('cleared');
+　
             // 同じカード名のペアコンテナがあるか確認
             let pairContainer = opponentHandContainer.querySelector(`.pair-container[data-name="${card.dataset.name}"]`);
             if (!pairContainer) {
@@ -330,14 +331,6 @@
                 pairContainer.appendChild(nameLabel);
                 opponentHandContainer.appendChild(pairContainer);
             }
-
-             // クローンを追加（画像は表示される）
-            clone.classList.add('matched');
-            clone.querySelector('img').style.display = 'block';
-            pairContainer.appendChild(clone);
-        
-            // 場のカードは透明に
-            card.classList.add('cleared');
 
             // カード表示処理
             card.classList.remove('hidden');
