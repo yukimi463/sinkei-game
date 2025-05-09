@@ -2,15 +2,15 @@ body {
 background-color: yellowgreen;
 }   
 .card {
-  width: 11vw;
-  height: 11vw;
+  width: 10vw;               /* ← 少し小さく */
+  height: 10vw;
   aspect-ratio: 1 / 1;
   border: none;
   display: inline-block;
   text-align: center;
   background-color: transparent;
   cursor: pointer;
-  margin: 5px;
+  margin: 0;
   transition: transform 0.6s;
 }
 .card img {
@@ -61,8 +61,8 @@ background-color: yellowgreen;
 
 #game-board {
   display: grid;
-  grid-template-columns: repeat(8, 11vw);
-  gap: 1vw;
+  grid-template-columns: repeat(8, 10vw);  /* ← 10vw × 8 = 80vw */
+  gap: 1vw;                                 /* 1vw × 7 = 7vw → 合計87vw程度 */
   justify-content: center;
 }
 
