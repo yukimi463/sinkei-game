@@ -107,7 +107,7 @@ background-color: yellowgreen;
     cursor: default;
 }
 
- @media (max-width: 600px) {
+@media (max-width: 600px) {
   #game-board {
     display: grid;
     grid-template-columns: repeat(8, 1fr); /* 8列 */
@@ -127,35 +127,41 @@ background-color: yellowgreen;
     object-fit: cover; /* 画像の変形を防ぐ */
   }
 
-    button {
+  button {
         font-size: 14px; /* ボタンの文字サイズを調整 */
         padding: 8px 16px;
-    }
+  }
 
-      #skill-display {
+  #skill-display {
+    width: 100%;
     padding: 4px;
     margin: 0;
-    width: 95%;            /* 画面幅いっぱいに使う（必要に応じて） */
-    font-size: 14px;
+    background-color: #87cee8;
+    box-sizing: border-box;
   }
 
   #skill-display h3 {
-    font-size: 16px;
-    margin: 2px 0;         /* 上下の余白を最小限に */
+    font-size: 14px;
+    margin: 4px 0;
+    text-align: center;
+  }
+
+  #skill-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   #skill-list li {
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 2px 0;         /* スキル同士の間隔も詰める */
+    margin: 2px 0;
+    font-size: 13px;
+    line-height: 1.2;
+    display: flex;
+    justify-content: space-between;
   }
 
   #skill-list span {
-    font-size: 14px;
-  }
-
-  #skill-list li::after {
-    font-size: 12px;
+    text-decoration: underline;
   }
 }
 
