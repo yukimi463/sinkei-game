@@ -157,25 +157,6 @@ background-color: yellowgreen;
     position: relative; /* 吹き出しの位置を調整するため */
 }
 
-/* 吹き出しのスタイル */
-#skill-list span::after {
-    content: attr(data-tooltip); /* 吹き出しの内容をスキル名の data-tooltip 属性から取得 */
-    position: absolute;
-    bottom: 100%; /* 吹き出しをスキル名の上に表示 */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333; /* 吹き出しの背景色 */
-    color: #fff; /* 吹き出しの文字色 */
-    padding: 5px 10px;
-    border-radius: 5px;
-    white-space: nowrap;
-    font-size: 12px;
-    opacity: 0; /* 初期状態では非表示 */
-    pointer-events: none; /* 吹き出しにマウスイベントを無効化 */
-    transition: opacity 0.2s ease-in-out;
-    z-index: 10;
-}
-
 .pair-container {
     display: flex;
     flex-direction: column;     /* 上から下に配置（ラベル → 画像） */
@@ -289,7 +270,9 @@ background-color: yellowgreen;
     font-size: 16px;
     }
     
-    #skill-list li::marker{
-        content: none;
+    #skill-list p::before,
+    #skill-list p::after,
+    #skill-list p::marker {
+        content: none !important;
+        display: none !important;
     }
-
