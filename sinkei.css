@@ -176,11 +176,6 @@ background-color: yellowgreen;
     z-index: 10;
 }
 
-/* 吹き出しを表示 */
-#skill-list span:hover::after {
-    opacity: 1; /* 吹き出しを表示 */
-}
-
 .pair-container {
     display: flex;
     flex-direction: column;     /* 上から下に配置（ラベル → 画像） */
