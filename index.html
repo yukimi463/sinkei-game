@@ -57,6 +57,14 @@
     </div>
 </body>
     <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const isMobile = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+            if (isMobile) {
+              document.querySelectorAll('[title]').forEach(el => el.removeAttribute('title'));
+            }
+          });
+        
         function shuffleCards() {
             const board = document.getElementById("game-board");
             const cards = Array.from(board.children);
@@ -98,13 +106,6 @@
           { name: "ダブルフリップ", action: enableDoubleFlip, remainingUses: 1 },
           { name: "タイムカット", action: cutOpponentTime, remainingUses: 1 }
         ];
-        
-          document.addEventListener('DOMContentLoaded', function () {
-            const isMobile = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-            if (isMobile) {
-              document.querySelectorAll('[title]').forEach(el => el.removeAttribute('title'));
-            }
-          });
 
             updateSkillDisplay();
             startTimer(); // タイマーを開始
