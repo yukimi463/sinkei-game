@@ -181,24 +181,6 @@ background-color: yellowgreen;
     opacity: 1; /* 吹き出しを表示 */
 }
 
-@media (max-width: 600px) {
-    #skill-display {
-        width: 90%;           /* 横幅をスマホ画面に合わせる */
-        right: 5%;            /* 画面右端からの距離を少し内側に */
-        font-size: 14px;      /* 文字サイズを少し小さく */
-        padding: 8px;
-    }
-
-    #skill-display h3 {
-        font-size: 16px;
-    }
-
-    #skill-list li {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
 .pair-container {
     display: flex;
     flex-direction: column;     /* 上から下に配置（ラベル → 画像） */
