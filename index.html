@@ -57,7 +57,7 @@
     </div>
 </body>
     <script>
-        
+        document.addEventListener("DOMContentLoaded", () => {
         function shuffleCards() {
             const board = document.getElementById("game-board");
             const cards = Array.from(board.children);
@@ -99,10 +99,6 @@
           { name: "ダブルフリップ", action: enableDoubleFlip, remainingUses: 1 },
           { name: "タイムカット", action: cutOpponentTime, remainingUses: 1 }
         ];
-
-            updateSkillDisplay();
-            startTimer(); // タイマーを開始
-            updateHandVisibility(); 
 
         fetch("animal_cards.json")
             .then(res => res.json())
@@ -477,6 +473,9 @@
             alert(resultMessage);
         }
 
+            updateSkillDisplay();
+            startTimer(); // タイマーを開始
+            updateHandVisibility(); 
     });
     </script>
 </body>
