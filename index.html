@@ -336,6 +336,7 @@
             card.classList.remove('hidden', 'flipped');
             card.classList.add('matched');
             card.querySelector('img').style.display = 'block';
+            pairContainer.appendChild(card);
 
            // ペア数更新
             const opponentPairsCount = document.getElementById('opponent-pairs-count');
