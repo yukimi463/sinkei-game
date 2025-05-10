@@ -387,7 +387,7 @@
         // switchTurn関数内でターン数を更新
         function switchTurn() {
             isPlayerTurn = !isPlayerTurn;
-            turnIndicator.textContent = isPlayerTurn ? 'あなたのターンです' : '相手のターンです';
+            turnIndicator.textContent = isPlayerTurn ? '---あなたのターンです---' : '---相手のターンです---';
 
             updateTurnCount();
             startTimer();
