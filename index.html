@@ -433,7 +433,6 @@
                 // スキル名をクリック可能にする
                 const skillName = document.createElement("span");
                 skillName.textContent = `${skill.name}`;
-                skillName.setAttribute("data-tooltip", getSkillDescription(skill.name));
                 skillName.style.cursor = skill.remainingUses > 0 ? "pointer" : "default";
                 skillName.style.color = skill.remainingUses > 0 ? "black" : "gray";
 
