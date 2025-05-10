@@ -363,16 +363,24 @@
             }, 1000);
         }
 
-        function updateHandVisibility() {
+       function updateHandVisibility() {
             const playerHandContainer = document.getElementById('player-hand-container');
             const opponentHandContainer = document.getElementById('opponent-hand-container');
+        
+            const handLabels = document.querySelectorAll('.hand-label');
+            const playerLabel = handLabels[0]; // 自分の手元
+            const opponentLabel = handLabels[1]; // 相手の手元
         
             if (isPlayerTurn) {
                 playerHandContainer.style.display = 'flex';
                 opponentHandContainer.style.display = 'none';
+                playerLabel.style.display = 'block';
+                opponentLabel.style.display = 'none';
             } else {
                 playerHandContainer.style.display = 'none';
                 opponentHandContainer.style.display = 'flex';
+                playerLabel.style.display = 'none';
+                opponentLabel.style.display = 'block';
             }
         }
 
