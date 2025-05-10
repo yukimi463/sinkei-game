@@ -44,6 +44,17 @@
             <li><span data-tooltip="相手の制限時間を30秒短縮します">タイムカット</span> → 残り使用回数 1回</li>
         </ul>
     </div>
+    <div id="skill-modal" class="modal">
+      <div class="modal-content">
+        <h3 id="modal-skill-name"></h3>
+        <p id="modal-skill-desc"></p>
+        <p>このスキルを使いますか？</p>
+        <div class="modal-buttons">
+          <button id="cancel-skill">いいえ</button>
+          <button id="confirm-skill">はい</button>
+        </div>
+      </div>
+    </div>
 </body>
     <script>
         function shuffleCards() {
@@ -225,26 +236,36 @@
             }
         }
 
-        function useSkill(skillIndex) {
-            const skill = playerSkills[skillIndex];
+        function useSkill(index) {
+          const skill = playerSkills[index];
+          if (!skill || skill.remainingUses <= 0) return;
+        
+          // スマホならモーダル表示
+          if (window.innerWidth <= 600) {
+            document.getElementById('modal-skill-name').textContent = skill.name;
+            document.getElementById('modal-skill-desc').textContent = getSkillDescription(skill.name);
+            document.getElementById('skill-modal').style.display = 'flex';
+        
+            // ボタンクリックイベント設定
+            document.getElementById('confirm-skill').onclick = () => {
+              document.getElementById('skill-modal').style.display = 'none';
+              executeSkill(index);
+            };
+            document.getElementById('cancel-skill').onclick = () => {
+              document.getElementById('skill-modal').style.display = 'none';
+            };
+          } else {
+            // PCなら即実行
+            executeSkill(index);
+          }
+        }
 
-            if (!skill) {
-                alert("スキルが選択されていません！");
-                return;
-            }
-
-            if (skill.remainingUses <= 0) {
-                alert(`スキル「${skill.name}」はもう使用できません！`);
-                return;
-            }
-
-            // スキルのアクションを実行
-            skill.action();
-            skill.remainingUses--; // 使用回数を減らす
-            alert(`スキル「${skill.name}」を使用しました！残り使用回数: ${skill.remainingUses}`);
-
-            // スキル表示を更新
-            updateSkillDisplay();
+        function executeSkill(index) {
+          const skill = playerSkills[index];
+          skill.action();
+          skill.remainingUses--;
+          alert(`スキル「${skill.name}」を使用しました！残り使用回数: ${skill.remainingUses}`);
+          updateSkillDisplay();
         }
 
        function addToPlayerHand(card) {
