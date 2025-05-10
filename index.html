@@ -37,13 +37,14 @@
     </div>
 
     <div id="skill-display">
-        <h3>【プレイヤースキル】</h3>
-        <ul id="skill-list">
-            <li><span>シャッフル</span> → 残り使用回数 2回</li>
-            <li><span>ダブルフリップ</span> → 残り使用回数 1回</li>
-            <li><span>タイムカット</span> → 残り使用回数 1回</li>
-        </ul>
+      <h3>【プレイヤースキル】</h3>
+      <div id="skill-list">
+        <p><span>シャッフル</span> → 残り使用回数 2回</p>
+        <p><span>ダブルフリップ</span> → 残り使用回数 1回</p>
+        <p><span>タイムカット</span> → 残り使用回数 1回</p>
+      </div>
     </div>
+
     <div id="skill-modal" class="modal">
       <div class="modal-content">
         <h3 id="modal-skill-name"></h3>
@@ -423,24 +424,27 @@
         function updateSkillDisplay() {
             const skillList = document.getElementById("skill-list");
             skillList.innerHTML = ""; // リストをクリア
-
+        
             playerSkills.forEach((skill, index) => {
-                const listItem = document.createElement("li");
-                 listItem.style.listStyleType = "none";
-
-                // スキル名をクリック可能にする
+                const p = document.createElement("p");
+                p.style.display = "flex";
+                p.style.justifyContent = "space-between";
+                p.style.alignItems = "center";
+                p.style.margin = "2px 0";
+        
                 const skillName = document.createElement("span");
                 skillName.textContent = `${skill.name}`;
                 skillName.style.cursor = skill.remainingUses > 0 ? "pointer" : "default";
                 skillName.style.color = skill.remainingUses > 0 ? "black" : "gray";
-
+                skillName.style.textDecoration = "underline";
+        
                 if (skill.remainingUses > 0) {
-                    skillName.onclick = () => useSkill(index); // イベントリスナーを1回だけ設定
+                    skillName.onclick = () => useSkill(index);
                 }
-
-                listItem.appendChild(skillName);
-                listItem.appendChild(document.createTextNode(` → 残り使用回数 ${skill.remainingUses}回`));
-                skillList.appendChild(listItem);
+        
+                p.appendChild(skillName);
+                p.appendChild(document.createTextNode(` → 残り使用回数 ${skill.remainingUses}回`));
+                skillList.appendChild(p);
             });
         }
 
