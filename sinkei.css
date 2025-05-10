@@ -126,12 +126,37 @@ background-color: yellowgreen;
     height: 100%;
     object-fit: cover; /* 画像の変形を防ぐ */
   }
-}
 
     button {
         font-size: 14px; /* ボタンの文字サイズを調整 */
         padding: 8px 16px;
     }
+
+      #skill-display {
+    padding: 4px;
+    margin: 0;
+    width: 95%;            /* 画面幅いっぱいに使う（必要に応じて） */
+    font-size: 14px;
+  }
+
+  #skill-display h3 {
+    font-size: 16px;
+    margin: 2px 0;         /* 上下の余白を最小限に */
+  }
+
+  #skill-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2px 0;         /* スキル同士の間隔も詰める */
+  }
+
+  #skill-list span {
+    font-size: 14px;
+  }
+
+  #skill-list li::after {
+    font-size: 12px;
+  }
 }
 
 /* スキル名のホバー時のスタイル */
