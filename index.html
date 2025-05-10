@@ -8,49 +8,43 @@
     
 </head>
 <body>
-    <h1 style="display: flex; align-items: center; gap: 20px;">
+    <h1 id="title-bar">
         生態系神経衰弱ゲーム（対戦型）
-        <div id="status-container" style="font-size: 18px; display: flex; flex-direction: column;">
+        <div id="status-container">
             <div id="turn-counter">ターン数: 1</div>
             <div id="time-remaining">制限時間: 60秒</div>
         </div>
     </h1>
 
-    <h2 id="turn-indicator" style="margin-top: 0; margin-bottom: 10px;">あなたのターンです</h2>
+    <h2 id="turn-indicator">あなたのターンです</h2>
 
     <div id="game-board"></div>
 
-    <h2 style="display: flex; align-items: center; gap: 20px;">
+    <h2 class="hand-label">
         自分の手元
         <span id="player-pairs-count">ペア数: 0</span>
-        </h2>
-        <div id="player-hand-container">
+    </h2>
+    <div id="player-hand-container">
         <div id="player-hand"></div>
-        </div>
+    </div>
 
-        <h2 style="display: flex; align-items: center; gap: 20px;">
+    <h2 class="hand-label">
         相手の手元
         <span id="opponent-pairs-count">ペア数: 0</span>
-        </h2>
-        <div id="opponent-hand-container">
+    </h2>
+    <div id="opponent-hand-container">
         <div id="opponent-hand"></div>
-        </div>
-      
-        <div id="skill-display" style="margin: 20px 20px 0 auto; border: 1px solid black; padding: 10px;">
-            <h3>【プレイヤースキル】</h3>
-            <ul id="skill-list" style="list-style: none; padding: 0; margin: 0;">
-                <li>
-                    <span data-tooltip="カードをシャッフルします">シャッフル</span> → 残り使用回数 2回
-                </li>
-                <li>
-                    <span data-tooltip="1ターンで4枚のカードをめくれます">ダブルフリップ</span> → 残り使用回数 1回
-                </li>
-                <li>
-                    <span data-tooltip="相手の制限時間を30秒短縮します">タイムカット</span> → 残り使用回数 1回
-                </li>
-            </ul>
-        </div>
     </div>
+
+    <div id="skill-display">
+        <h3>【プレイヤースキル】</h3>
+        <ul id="skill-list">
+            <li><span data-tooltip="カードをシャッフルします">シャッフル</span> → 残り使用回数 2回</li>
+            <li><span data-tooltip="1ターンで4枚のカードをめくれます">ダブルフリップ</span> → 残り使用回数 1回</li>
+            <li><span data-tooltip="相手の制限時間を30秒短縮します">タイムカット</span> → 残り使用回数 1回</li>
+        </ul>
+    </div>
+</body>
     <script>
         function shuffleCards() {
             const board = document.getElementById("game-board");
