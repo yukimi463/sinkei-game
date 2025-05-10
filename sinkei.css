@@ -2,6 +2,29 @@ body {
 background-color: yellowgreen;
 }   
 
+#title-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#status-container {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+#turn-indicator {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.hand-label {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 .card {
   width: 100%;
   aspect-ratio: 1 / 1;          /* 正方形を維持 */
