@@ -107,64 +107,6 @@ background-color: yellowgreen;
     cursor: default;
 }
 
-@media (max-width: 600px) {
-  #game-board {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr); /* 8列 */
-    gap: 1vw;
-    padding: 1vw;
-  }
-
-  .card {
-    width: 10vw;
-    height: 10vw;
-    margin: 0; /* gapで調整するのでmargin不要 */
-  }
-
-  .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 画像の変形を防ぐ */
-  }
-
-  button {
-        font-size: 14px; /* ボタンの文字サイズを調整 */
-        padding: 8px 16px;
-  }
-
-  #skill-display {
-    width: 100%;
-    padding: 4px;
-    margin: 0;
-    background-color: #87cee8;
-    box-sizing: border-box;
-  }
-
-  #skill-display h3 {
-    font-size: 14px;
-    margin: 4px 0;
-    text-align: center;
-  }
-
-  #skill-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  #skill-list li {
-    margin: 2px 0;
-    font-size: 13px;
-    line-height: 1.2;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  #skill-list span {
-    text-decoration: underline;
-  }
-}
-
 /* スキル名のホバー時のスタイル */
 #skill-list span:hover {
     color: orange; /* オレンジ色に変更 */
@@ -312,5 +254,70 @@ background-color: yellowgreen;
     gap: 10px;
     padding-top: 0;
     margin-bottom: 10px;
+}
+
+/* 以下スマホ用 */
+@media (max-width: 600px) {
+  #game-board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8列 */
+    gap: 1vw;
+    padding: 1vw;
+  }
+
+  .card {
+    width: 10vw;
+    height: 10vw;
+    margin: 0; /* gapで調整するのでmargin不要 */
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像の変形を防ぐ */
+  }
+
+  button {
+        font-size: 14px; /* ボタンの文字サイズを調整 */
+        padding: 8px 16px;
+  }
+
+  #skill-display {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: #87cee8;
+    border: 1px solid black;
+    padding: 4px 8px;
+    width: auto;
+    max-width: 90vw;
+    font-size: 12px;
+    z-index: 10;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+  }
+
+  #skill-display h3 {
+    font-size: 13px;
+    margin: 0 0 4px 0;
+    text-align: center;
+  }
+
+  #skill-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #skill-list li {
+    margin: 2px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11.5px;
+  }
+
+  #skill-list span {
+    text-decoration: underline;
+  }
 }
 
