@@ -39,9 +39,9 @@
     <div id="skill-display">
         <h3>【プレイヤースキル】</h3>
         <ul id="skill-list">
-            <li><span data-tooltip="カードをシャッフルします">シャッフル</span> → 残り使用回数 2回</li>
-            <li><span data-tooltip="1ターンで4枚のカードをめくれます">ダブルフリップ</span> → 残り使用回数 1回</li>
-            <li><span data-tooltip="相手の制限時間を30秒短縮します">タイムカット</span> → 残り使用回数 1回</li>
+            <li><span>シャッフル</span> → 残り使用回数 2回</li>
+            <li><span>ダブルフリップ</span> → 残り使用回数 1回</li>
+            <li><span>タイムカット</span> → 残り使用回数 1回</li>
         </ul>
     </div>
     <div id="skill-modal" class="modal">
@@ -102,14 +102,6 @@
             updateSkillDisplay();
             startTimer(); // タイマーを開始
             updateHandVisibility(); 
-
-         // スマホかどうか判定
-          if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
-            // すべての aタグからtitle属性を削除
-            document.querySelectorAll('a[title]').forEach(el => {
-              el.removeAttribute('title');
-            });
-          }
 
         fetch("animal_cards.json")
             .then(res => res.json())
