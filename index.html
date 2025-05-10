@@ -98,10 +98,18 @@
           { name: "ダブルフリップ", action: enableDoubleFlip, remainingUses: 1 },
           { name: "タイムカット", action: cutOpponentTime, remainingUses: 1 }
         ];
-    document.addEventListener("DOMContentLoaded", () => {
-        updateSkillDisplay();
-        startTimer(); // タイマーを開始
-        updateHandVisibility(); 
+        document.addEventListener("DOMContentLoaded", () => {
+            updateSkillDisplay();
+            startTimer(); // タイマーを開始
+            updateHandVisibility(); 
+
+         // スマホかどうか判定
+          if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+            // すべての aタグからtitle属性を削除
+            document.querySelectorAll('a[title]').forEach(el => {
+              el.removeAttribute('title');
+            });
+          }
 
         fetch("animal_cards.json")
             .then(res => res.json())
