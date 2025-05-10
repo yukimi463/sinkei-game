@@ -16,7 +16,7 @@
         </div>
     </h1>
 
-    <h2 id="turn-indicator">---<span id="turn-player">自分</span>のターンです---</h2>
+    <h2 id="turn-indicator">---<span id="turn-player">自分</span>です---</h2>
 
     <div id="game-board"></div>
 
@@ -391,7 +391,7 @@
             const turnPlayer = document.getElementById('turn-player');
             if (isPlayerTurn) {
                 turnPlayer.textContent = '自分のターン';
-                turnPlayer.style.color = 'deepskyblue'; // 水色
+                turnPlayer.style.color = 'blue'; // 青色
             } else {
                 turnPlayer.textContent = '相手のターン';
                 turnPlayer.style.color = 'red'; // 赤色
