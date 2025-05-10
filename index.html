@@ -98,7 +98,14 @@
           { name: "ダブルフリップ", action: enableDoubleFlip, remainingUses: 1 },
           { name: "タイムカット", action: cutOpponentTime, remainingUses: 1 }
         ];
-        document.addEventListener("DOMContentLoaded", () => {
+        
+          document.addEventListener('DOMContentLoaded', function () {
+            const isMobile = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+            if (isMobile) {
+              document.querySelectorAll('[title]').forEach(el => el.removeAttribute('title'));
+            }
+          });
+
             updateSkillDisplay();
             startTimer(); // タイマーを開始
             updateHandVisibility(); 
