@@ -271,7 +271,7 @@ background-color: yellowgreen;
 
 #player-hand-container,
 #opponent-hand-container {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 10px;
     padding-top: 0;
