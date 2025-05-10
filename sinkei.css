@@ -264,28 +264,3 @@ background-color: yellowgreen;
         padding: 8px 16px;
   }
 
-  #skill-display {
-  background-color: #87cee8 !important;
-  border: 1px solid black !important;
-  padding: 2px !important;
-  margin: 0 !important;
-  width: fit-content !important;
- }
-
-#skill-display h3 {
-  font-size: 16px !important;
-  text-align: center !important;
-  margin: 0 !important;
- }
-
-#skill-list {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
- }
-
-#skill-list li {
-  margin: 2px 0 !important;
-  font-size: 14px !important;
- }
-
