@@ -96,6 +96,7 @@
     document.addEventListener("DOMContentLoaded", () => {
         updateSkillDisplay();
         startTimer(); // タイマーを開始
+        updateHandVisibility(); 
 
         fetch("animal_cards.json")
             .then(res => res.json())
@@ -368,16 +369,28 @@
             }, 1000);
         }
 
+        function updateHandVisibility() {
+            const playerHandContainer = document.getElementById('player-hand-container');
+            const opponentHandContainer = document.getElementById('opponent-hand-container');
+        
+            if (isPlayerTurn) {
+                playerHandContainer.style.display = 'flex';
+                opponentHandContainer.style.display = 'none';
+            } else {
+                playerHandContainer.style.display = 'none';
+                opponentHandContainer.style.display = 'flex';
+            }
+        }
+
+
         // switchTurn関数内でターン数を更新
         function switchTurn() {
             isPlayerTurn = !isPlayerTurn;
             turnIndicator.textContent = isPlayerTurn ? 'あなたのターンです' : '相手のターンです';
 
-            // ターン数を更新
             updateTurnCount();
-
-            // タイマーをリセットして再スタート
             startTimer();
+            updateHandVisibility();
         }
 
         function updateSkillDisplay() {
