@@ -142,10 +142,11 @@ background-color: yellowgreen;
 }
 
  /* プレイヤースキル枠の背景色を水色に設定 */
- #skill-display {
-    background-color: #87cee8; /* 背景色を水色に設定 */
+#skill-display {
+    background-color: #87cee8;
     border: 1px solid black;
-    padding: 10px;
+    padding: 4px;          /* ←余白を減らす（例: 10px → 4px） */
+    margin: 0;             /* ←上下の隙間が気になる場合 */
     width: fit-content;
 }
 
@@ -156,11 +157,10 @@ background-color: yellowgreen;
     margin-bottom: 20px;
 }
 
-/* 「プレイヤースキル」の文字を大きくして中央揃えに */
 #skill-display h3 {
-    font-size: 20px; /* 文字を大きく */
-    text-align: center; /* 中央揃え */
-    margin: 0; /* 無駄な余白を削除 */
+    font-size: 16px;
+    text-align: center;
+    margin: 0;             /* ←タイトルの上下の隙間を消す */
 }
 
 /* スキルリストのスタイル調整 */
@@ -175,7 +175,7 @@ background-color: yellowgreen;
     display: flex; /* フレックスボックスで配置 */
     justify-content: space-between; /* 左右に配置 */
     align-items: center; /* 垂直方向を中央揃え */
-    margin: 5px 0; /* 各スキル間の余白を調整 */
+    margin: 2px 0; /* 各スキル間の余白を調整 */
 }
 
 /* スキル名に下線を追加 */
