@@ -24,7 +24,7 @@
         自分の手元
         <span id="player-pairs-count">ペア数: 0</span>
         </h2>
-        <div id="player-hand-container" style="display: flex; gap: 10px;">
+        <div id="player-hand-container">
         <div id="player-hand"></div>
         </div>
 
@@ -32,7 +32,7 @@
         相手の手元
         <span id="opponent-pairs-count">ペア数: 0</span>
         </h2>
-        <div id="opponent-hand-container" style="display: flex; gap: 10px;">
+        <div id="opponent-hand-container">
         <div id="opponent-hand"></div>
         </div>
       
@@ -381,7 +381,6 @@
                 opponentHandContainer.style.display = 'flex';
             }
         }
-
 
         // switchTurn関数内でターン数を更新
         function switchTurn() {
